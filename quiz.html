@@ -111,7 +111,7 @@ const question1 = document.querySelector('input[name="question1"]:checked');
 
   // Now this checks if the fill in the blank is correct, .value.trim().toLowerCase gets the current value, trims any unnessecary spaces, and converts it to lowercase. We HAVE to convert it to lowercase so that if someone types for instance: TELNET but I put the correct answer as Telnet, it won't mark it as incorrect, it will still be correct. We do not need it to be case sensitive for this quiz.
   // It is not as complicated as it looks. I put where the hyphen is accepted and also not needed in the name, as it doesn't really matter if the hyphen is there or not, and the lowercase converter wouldn't catch that as an okay. To break down that .replace(/-/g,''). // is a regular expression literal for JavaScript, - is the character to replace, g is a 'global flag' which means it tags all occurances of - in the string, and '' is the replacement, which is nothing. We want it to be able to match my given correct answer in the code. (I felt smart figuring this out.)
-  const question4 = document.querySelector('input[name="question4"]').value.trim().toLowerCase().replace(/-/g,'');
+  const question4 = document.querySelector('input[name="question4"]').value.trim().toLowerCase().replace(/-/g,' ');
   if (question4 === "tim berners lee") {
     score++;
     results += "<p>Question 4 Correct</p>";

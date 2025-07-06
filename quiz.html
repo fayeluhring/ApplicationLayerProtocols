@@ -21,6 +21,10 @@
         <a href="quiz.html">Self-Assessment Quiz</a>
   </nav>
 </header>
+
+<!--This is SPECIFICALLY for my CSS, I need to make sure my quiz buttons are separate for my CSS code.-->
+<button class="quiz-button" type="button" onclick="GradeQuiz()">Submit</button>
+<button class="quiz-button" type="button" onclick="ResetQuiz()">Restart</button>
 <!--Time to start the quiz! I started out with a clean header, and a brief summary of what the quiz is. I included information about being able to restart just incase the user doesn't see the button.-->
 <main>
    <h2>Let's See What You Learned!</h2> 
@@ -86,27 +90,27 @@ function GradeQuiz() {
 const question1 = document.querySelector('input[name="question1"]:checked');
   if (question1 && question1.value == "1") {
     score++;
-    results += "<p>Q1 Correct</p>";
+    results += "<p>Question 1: Correct</p>";
   } else {
-    results += "<p>Q1 Incorrect (Answer: HyperText Transfer Protocol)</p>";
+    results += "<p>Question 1: Incorrect (Answer: HyperText Transfer Protocol)</p>";
   }
 
   // Same thing here with our second multiple choice question. Same exact wording and set up just replacing question1 with question2.
   const question2 = document.querySelector('input[name="question2"]:checked');
   if (question2 && question2.value == "1") {
     score++;
-    results += "<p>Q2 Correct</p>";
+    results += "<p>Question 2: Correct</p>";
   } else {
-    results += "<p>Q2 Incorrect (Answer: Security concerns)</p>";
+    results += "<p>Question 2: Incorrect (Answer: Security concerns)</p>";
   }
 
   // Same thing again here, as it is also multiple choice. It also makes sure in all of these the score goes up every time the answer is correct, but doesn't move if it is wrong.
   const question3 = document.querySelector('input[name="question3"]:checked');
   if (question3 && question3.value == "1") {
     score++;
-    results += "<p>Question 3 Correct</p>";
+    results += "<p>Question 3: Correct</p>";
   } else {
-    results += "<p>Question 3 Incorrect (Answer: Transfers files over the internet)</p>";
+    results += "<p>Question 3: Incorrect (Answer: Transfers files over the internet)</p>";
   }
 
   // Now this checks if the fill in the blank is correct, .value.trim().toLowerCase gets the current value, trims any unnessecary spaces, and converts it to lowercase. We HAVE to convert it to lowercase so that if someone types for instance: TELNET but I put the correct answer as Telnet, it won't mark it as incorrect, it will still be correct. We do not need it to be case sensitive for this quiz.
@@ -114,9 +118,9 @@ const question1 = document.querySelector('input[name="question1"]:checked');
   const question4 = document.querySelector('input[name="question4"]').value.trim().toLowerCase().replace(/-/g,' ');
   if (question4 === "tim berners lee") {
     score++;
-    results += "<p>Question 4 Correct</p>";
+    results += "<p>Question 4: Correct</p>";
   } else {
-    results += "<p>Question 4 Incorrect (Answer: Tim Berners-Lee)</p>";
+    results += "<p>Question 4: Incorrect (Answer: Tim Berners-Lee)</p>";
   }
 
   // This checks the multiple selection answer, question 5 they need to choose multiple answers, so this makes sure both are selected to count as correct. So, it goes through and makes sure all values put as 1 are there, and if the total count at the end is 2, it marks this question as correct. If it is below, it will be incorrect completely. I am not doing half points as it is too complicated but I might in the future if we change this.
@@ -128,9 +132,9 @@ const question1 = document.querySelector('input[name="question1"]:checked');
   });
   if (correctQuestion5 === 2) {
     score++;
-    results += "<p>Question 5 Correct</p>";
+    results += "<p>Question 5: Correct</p>";
   } else {
-    results += "<p>Question 5 Incorrect (Answer: HTTPS, SFTP)</p>";
+    results += "<p>Question 5: Incorrect (Answer: HTTPS, SFTP)</p>";
   }
 
   // Once again, looks really complicated but is not. I wanted to do something that is different from what I'm assuming a lot of students will do with the pass and fail output, so I did "You...[passed/failed]". This will be the code to display if the user passed or failed, and their total score out of 5. I didn't do a total counter where it shows whatever the total is, as it is consistently 5 questions. 

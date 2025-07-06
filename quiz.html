@@ -21,10 +21,6 @@
         <a href="quiz.html">Self-Assessment Quiz</a>
   </nav>
 </header>
-
-<!--This is SPECIFICALLY for my CSS, I need to make sure my quiz buttons are separate for my CSS code.-->
-<button class="quiz-button" type="button" onclick="GradeQuiz()">Submit</button>
-<button class="quiz-button" type="button" onclick="ResetQuiz()">Restart</button>
 <!--Time to start the quiz! I started out with a clean header, and a brief summary of what the quiz is. I included information about being able to restart just incase the user doesn't see the button.-->
 <main>
    <h2>Let's See What You Learned!</h2> 
@@ -70,8 +66,8 @@
         </fieldset>
 
 <!-- Buttons to submit the quiz or restart the quiz, I used a regular button that when you click it (onclick) will do the selected action. It is very far from the restart quiz function, which I dislike but I feel it works the best here as it will be how the user uses it. -->
-    <button type="button" onclick="GradeQuiz()">Submit</button>
-    <button type="button" onclick="ResetQuiz()">Restart</button>
+<button class="quiz-button" type="button" onclick="GradeQuiz()">Submit</button>
+<button class="quiz-button" type="button" onclick="ResetQuiz()">Restart</button>
   </form>
 
   <!-- Where the results will appear -->

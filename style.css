@@ -125,9 +125,8 @@ input[type="text"] {
   box-sizing: border-box;
   color: black;
 }
-
-/* Buttons with green background and white text */
-button {
+/*Button when not active - background color of green, text color inside is white, no default border on button, adds space inside button, rounded corners, changes the pointer when hovering, adds space on right side of button for the double buttons at the end*/
+.quiz-button {
   background-color: green;
   color: white;
   border: none;
@@ -137,13 +136,7 @@ button {
   margin-right: 10px;
 }
 
-/*This is to fill in the buttons when you select your answer, if I do not put this it is a white color that doesn't look filled in.*/
-button:active{
-  background-color: #3e3d3d;
-  color: white; /*So the text stays visible*/
-}
-
-/* Button hover effect: slightly darker green */
-button:hover {
-  background-color: #006400;
+.quiz-button:active {
+  background-color: #3e3d3d; /*dark grey when option selected in quiz*/
+  color: white;
 }

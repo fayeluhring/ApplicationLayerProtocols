@@ -139,7 +139,7 @@ button {
 
 /*This is to fill in the buttons when you select your answer, if I do not put this it is a white color that doesn't look filled in.*/
 button:active{
-  background-color: #555555;
+  background-color: #3e3d3d;
   color: white; /*So the text stays visible*/
 }
 

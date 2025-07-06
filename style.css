@@ -137,6 +137,12 @@ button {
   margin-right: 10px;
 }
 
+/*This is to fill in the buttons when you select your answer, if I do not put this it is a white color that doesn't look filled in.*/
+button:active{
+  background-color: #555555;
+  color: white; /*So the text stays visible*/
+}
+
 /* Button hover effect: slightly darker green */
 button:hover {
   background-color: #006400;

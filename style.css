@@ -137,5 +137,5 @@ input[type="text"] {
 }
 .quiz-button:hover,
 .quiz-button:active {
-  background-color: #3e3d3d; /*dark grey when option selected in quiz*/
+  background-color: #3e3d3d !important; /*dark grey when option selected in quiz*/
 }

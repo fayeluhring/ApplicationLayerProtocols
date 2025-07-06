@@ -1,8 +1,12 @@
+<!--I have to make sure my doctype is HTML, that way this is registered as HTML, and then I put HTML afterwards as it is required.-->
 <!DOCTYPE html>
 <html>
 <head>
+<!--I use this to make sure my page is read correctly. UTF-8 supports almost all characters in all languages. I do not HAVE to do this, but it is an extra layer of protection. I learned this from GeeksforGeeks.-->
     <meta charset="UTF=8"/>
+<!--Now that all of the basics are out of the way, we have to make a title (I used my research all from Assignment 1 for everything listed.) and also use a href to link my HTML files to the tabs, like my home tab etc on my website. (This is my navigation).-->
     <title>Application Layer Protocols Overview</title>
+<!--We reference our stylesheet (css) here to make sure it follows along with our CSS file.-->
     <link rel = "stylesheet" href="style.css"/>
 </head>
 <body>
@@ -10,19 +14,21 @@
 <header>
     <h1>Application Layer Protocols</h1>
     <nav>
-        <a href = "index.html">Home</a>
-        <a href = "HTTPandHTTPS.html">HTTP and HTTPS</a>
-        <a href = "FTP/SFTP.html">FTP and SFTP</a>
-        <a href = "references.html">References</a>
+        <a href="index.html">Home</a>
+        <a href="HTTPandHTTPS.html">HTTP and HTTPS</a>
+        <a href="TELNET.html">TELNET Protocol</a>
+        <a href="FTPandSFTP.html">FTP and SFTP</a>
+        <a href="references.html">References</a>
+        <a href="quiz.html">Self-Assessment Quiz</a>
     </nav>
 </header>
-
+<!--This is my summary of application layer protocols found in assignment 1, I used the same resources and everything I already wrote. We are required an executive summary so this is how I did it.-->
 <main>
     <section>
         <h2>Executive Summary </h2>
-        <p>Application layer protocols are some of the most important components of the computer network. They are at the top of the network protocol stack (Hovemeyer, 2019, 2). “Application layer protocols are those protocols utilized at the application layer of the OSI (Open Systems Interconnection) and TCP (Transmission Control Protocol)/IP (Internet Protocol) models” (“Protocols Application Layer”, 2024, 2). Application layer protocols define how applications communicate with each other on various network devices (“Protocols in Application Layer”, 2024, 2). Without these protocols, applications would not properly communicate with each other, leading to slow downs, improper information, and simply a computer not being able to run correctly.
+        <p>Application layer protocols are some of the most important components of the computer network. They are at the top of the network protocol stack (Hovemeyer, 2019, 2). “Application layer protocols are those protocols utilized at the application layer of the OSI (Open Systems Interconnection) and TCP (Transmission Control Protocol)/IP (Internet Protocol) models” (“Protocols Application Layer”, 2024, 2). Application layer protocols define how applications communicate with each other on various network devices (“Protocols in Application Layer”, 2024, 2). Without these protocols, applications would not properly communicate with each other, leading to slow downs, improper information, and simply a computer not being able to run correctly.</p>
     </section>
-
+<!--Now for the table of contents, this lists everything on the index page for an even quicker way to go to each tab. I also put a description under each one so it was clearer what each tab is.I used almost the exact same commands as my navigation, only I used a table on the actual index page instead! I used tr (table row) and td (table data) to make sure everything is perfect with my table.--> 
     <section>
         <h2>Table of Contents</h2>
         <table>
@@ -31,21 +37,29 @@
                 <th>Description</th>
             </tr>
             <tr>
-                <td><a href = "HTTPandHTTPS.html">HTTP and HTTPS</a></td>
+                <td><a href="HTTPandHTTPS.html">HTTP and HTTPS</a></td>
                 <td>Explore web communication protocols in secure and nonsecure connections.</td>
             </tr>
             <tr>
-                <td><a href = "FTPandSFTP.html">FTP and SFTP</a></td>
+                <td><a href="TELNET.html">TELNET Protocol</a></td>
+                <td>Explore the TELNET protocol used to connect to a remote system.</td>
+            </tr>
+            <tr>
+                <td><a href="FTPandSFTP.html">FTP and SFTP</a></td>
                 <td>Explore file transfer protocols in secure and nonsecure connections.</td>
             </tr>
             <tr>
-                <td><a href = "references.html">References</a></td>
+                <td><a href="references.html">References</a></td>
                 <td>Sources for information given.</td>
+            </tr>
+            <tr>
+                <td><a href="quiz.html">Self-Assessment Quiz</a></td>
+                <td>A quiz to test what you have learned.</td>
             </tr>
         </table>
     </section>
 </main>
-
+<!--Finally I put my required footer saying this is a class project for IT, I do this on every page as it wasn't very specific on if I needed to do every page or just the front page. It's not extra work really so I just wanted to play it safe.-->
 <footer>
     <p>This is a class project for IT3203. <a href = "https://ksuweb.github.io/IT3203">Course Site</a></p>
 </footer>

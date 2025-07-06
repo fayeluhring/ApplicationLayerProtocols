@@ -1,0 +1,160 @@
+<!--Starting with our DOCTYPE, html, and our usual head, title, meta, everything to get things started like every other page.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Self-Assessment Quiz</title>
+<!--Even if this is a quiz, we still need to call our CSS to the stage to make sure it blends in with every other page.-->
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+<!--Made sure the page navigation was on this page just like the others.-->
+<header>
+  <h1>Self-Assessment Quiz</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="HTTPandHTTPS.html">HTTP and HTTPS</a>
+        <a href="TELNET.html">TELNET Protocol</a>
+        <a href="FTPandSFTP.html">FTP and SFTP</a>
+        <a href="references.html">References</a>
+        <a href="quiz.html">Self-Assessment Quiz</a>
+  </nav>
+</header>
+<!--Time to start the quiz! I started out with a clean header, and a brief summary of what the quiz is. I included information about being able to restart just incase the user doesn't see the button.-->
+<main>
+   <h2>Let's See What You Learned!</h2> 
+   <p>These questions are strictly information from this website, take the quiz and see what you have learned! You can restart to test your skills multiple times.</p>
+<!--Form ID is used to make sure all inputs are grouped together (radio buttons (for multiple choice), checkboxes (for multiple selection), text fields (for text answers)) we want the user to fill out. I named it "TheQuiz" -->
+   <form id="TheQuiz">
+<!--Very easy multiple choice, most will get this based on common sense, but not too easy.-->
+        <fieldset>
+        <legend>What does HTTP stand for? </legend>
+        <label><input type="radio" name="question1" value="0"> Hypertext Transport Package</label>
+        <label><input type="radio" name="question1" value="1"> Hypertext Transfer Protocol</label>
+        <label><input type="radio" name="question1" value="0"> Hyper Transfer Text Program</label>
+        </fieldset>
+<!--Another multiple choice, pretty easy but I wanted to make the answers where you have to of read my information to do the quiz.-->
+        <fieldset>
+        <legend>What was TELNET primarily used for?</legend>
+        <label><input type="radio" name="question2" value="1"> Providing remote access to computers</label><br>
+        <label><input type="radio" name="question2" value="0"> Encrypting files and transferring them</label><br>
+        <label><input type="radio" name="question2" value="0"> Managing emails</label>
+        </fieldset>
+
+<!-- I wanted to do easier multiple choice questions, but I did do some trick answers in order to confuse the user a bit. If you know the information I gave, the answer is easy. -->
+        <fieldset>
+        <legend>What does FTP do?</legend>
+        <label><input type="radio" name="question3" value="1"> Transfers files over the internet</label><br>
+        <label><input type="radio" name="question3" value="0"> Provides remote access to computers</label><br>
+        <label><input type="radio" name="question3" value="0"> Encrypts links when searching the web</label>
+        </fieldset>
+
+<!-- Question 4 I decided to do a more complex question, most people do not remember names when reading so I wanted them to remember the name of the creator of the most popular application layer protocol ever used and still used. -->
+        <fieldset>
+        <legend>_______ created HTTP.</legend>
+        <input type="text" name="question4" placeholder="Your answer here">
+        </fieldset>
+
+<!-- Question 5, I asked about TELNET for the multiple selection, as it is the newest addition and I feel like I could do the multiple selection best using TELNET information, as it isn't as obvious. -->
+        <fieldset>
+        <legend>Why is TELNET rarely used? (Select all that apply)</legend>
+        <label><input type="checkbox" name="question5" value="1"> Security concerns</label><br>
+        <label><input type="checkbox" name="question5" value="1"> Not properly interlinked = some abilities cannot be used</label><br>
+        <label><input type="checkbox" name="question5" value="0"> Too beginner friendly</label><br>
+        <label><input type="checkbox" name="question5" value="0"> No one used TELNET in the first place</label>
+        </fieldset>
+
+<!-- Buttons to submit the quiz or restart the quiz, I used a regular button that when you click it (onclick) will do the selected action. It is very far from the restart quiz function, which I dislike but I feel it works the best here as it will be how the user uses it. -->
+    <button type="button" onclick="GradeQuiz()">Submit</button>
+    <button type="button" onclick="ResetQuiz()">Restart</button>
+  </form>
+
+  <!-- Where the results will appear -->
+  <section id="results"></section>
+</main>
+
+<!-- JavaScript is used to check answers and display results. -->
+<!-- I do the GradeQuiz function here to start off, that way my future code can call back on this instead of having to write it all out. My coding experience once again makes all of this easier.-->
+<script>
+function GradeQuiz() {
+  let score = 0;
+  let results = "";
+
+// Due to my previous classes which gave me experience with if/else questions, this was easy. I just had to figure out the commands to write to get to where I needed to go. I used our class information and Geeks for Geeks and built in copilot for VS for help with definitions ONLY.
+// Now, const defines a constant veriable, document.querySelector is a DOM (we just learned this) method that selects the particular element given (question 1) and sees if it is checked/selected. If it is, it moves on and if it is not, it is marked as incorrect/null.
+const question1 = document.querySelector('input[name="question1"]:checked');
+  if (question1 && question1.value == "1") {
+    score++;
+    results += "<p>Q1 Correct</p>";
+  } else {
+    results += "<p>Q1 Incorrect (Answer: HyperText Transfer Protocol)</p>";
+  }
+
+  // Same thing here with our second multiple choice question. Same exact wording and set up just replacing question1 with question2.
+  const question2 = document.querySelector('input[name="question2"]:checked');
+  if (question2 && question2.value == "1") {
+    score++;
+    results += "<p>Q2 Correct</p>";
+  } else {
+    results += "<p>Q2 Incorrect (Answer: Security concerns)</p>";
+  }
+
+  // Same thing again here, as it is also multiple choice. It also makes sure in all of these the score goes up every time the answer is correct, but doesn't move if it is wrong.
+  const question3 = document.querySelector('input[name="question3"]:checked');
+  if (question3 && question3.value == "1") {
+    score++;
+    results += "<p>Question 3 Correct</p>";
+  } else {
+    results += "<p>Question 3 Incorrect (Answer: Transfers files over the internet)</p>";
+  }
+
+  // Now this checks if the fill in the blank is correct, .value.trim().toLowerCase gets the current value, trims any unnessecary spaces, and converts it to lowercase. We HAVE to convert it to lowercase so that if someone types for instance: TELNET but I put the correct answer as Telnet, it won't mark it as incorrect, it will still be correct. We do not need it to be case sensitive for this quiz.
+  // It is not as complicated as it looks. I put where the hyphen is accepted and also not needed in the name, as it doesn't really matter if the hyphen is there or not, and the lowercase converter wouldn't catch that as an okay. To break down that .replace(/-/g,''). // is a regular expression literal for JavaScript, - is the character to replace, g is a 'global flag' which means it tags all occurances of - in the string, and '' is the replacement, which is nothing. We want it to be able to match my given correct answer in the code. (I felt smart figuring this out.)
+  const question4 = document.querySelector('input[name="question4"]').value.trim().toLowerCase().replace(/-/g,'');
+  if (question4 === "tim berners lee") {
+    score++;
+    results += "<p>Question 4 Correct</p>";
+  } else {
+    results += "<p>Question 4 Incorrect (Answer: Tim Berners-Lee)</p>";
+  }
+
+  // This checks the multiple selection answer, question 5 they need to choose multiple answers, so this makes sure both are selected to count as correct. So, it goes through and makes sure all values put as 1 are there, and if the total count at the end is 2, it marks this question as correct. If it is below, it will be incorrect completely. I am not doing half points as it is too complicated but I might in the future if we change this.
+  const question5 = document.querySelectorAll('input[name="question5"]:checked');
+  let correctQuestion5 = 0;
+  question5.forEach(cb => {
+    if (cb.value == "1") correctQuestion5++;
+    else correctQuestion5--;
+  });
+  if (correctQuestion5 === 2) {
+    score++;
+    results += "<p>Question 5 Correct</p>";
+  } else {
+    results += "<p>Question 5 Incorrect (Answer: HTTPS, SFTP)</p>";
+  }
+
+  // Once again, looks really complicated but is not. I wanted to do something that is different from what I'm assuming a lot of students will do with the pass and fail output, so I did "You...[passed/failed]". This will be the code to display if the user passed or failed, and their total score out of 5. I didn't do a total counter where it shows whatever the total is, as it is consistently 5 questions. 
+  //This was also really simple, as I have done if else before in my coding experience, so I just had to learn quiz lingo for this coding system.
+  results += `<h3>Total Score: ${score} / 5</h3>`;
+  if (score >= 4) {
+    results += "<p>You... PASSED!</p>";
+  } else {
+    results += "<p>You... FAILED!</p>";
+  }
+  document.getElementById('results').innerHTML = results;
+}
+
+// This is for restarting the quiz, clearing all of the information you did previously to start completely from scratch.
+function ResetQuiz() {
+  document.getElementById('TheQuiz').reset();
+  document.getElementById('results').innerHTML = "";
+}
+</script>
+
+<!-- Footer just like all your other pages -->
+<footer>
+  <p>This is a class project for IT 3203. <a href="https://ksuweb.github.io/IT3203/">Course Site</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,3 +1,5 @@
+/* All of our body (everything under <body>) will be in Times new Roman font, with a white background color, and in a black text color. With 0 margin and 0 padding. Nothing special, just a basic and professional option I wanted to do as I didn't want to get too crafty*/
+
 body {
   font-family: "Times New Roman", Times, serif;
   background-color: white;
@@ -5,8 +7,8 @@ body {
   margin: 0;
   padding: 0;
 }
-
-/* Navigation links */
+/*Everything under <nav> or in our navigation will be basic as well, nothing crazy just simple CSS as I am brand new to this. I didn't do any underlines, I set my text color to black, I did a basic 15px to have navigation 15px away from everything on its left and right, and did some padding to make sure the content that follows isnt right up against anything under navigation.*/
+/*I did also do a bold font to make it stick out, which is needed for everything I did under navigation.*/
 nav a {
   text-decoration: none;
   color: black;
@@ -14,13 +16,12 @@ nav a {
   padding: 8px 0;
   font-weight: bold;
 }
-
-/* Hover effect for links */
+/*I did do an underline for hovering, which is good for the links I have which can help the user see kind of where to click.*/ 
 nav a:hover {
   text-decoration: underline;
 }
 
-/* Header styling */
+/*The headers will have a white background color, 20 pixels of space all around so the header sticks out like it is supposed to, center text for neater reading, and a small border at the bottom in a light grey to not look too out of place, but will still separate the header from the content.*/
 header {
   background-color: white;
   padding: 20px;
@@ -28,14 +29,14 @@ header {
   border-bottom: 1px solid #ccc;
 }
 
-/* Navigation bar layout */
+/* Navigation bar layout, nothing crazy again. I used flex to enable to flexbox layout here, so everything is easy to distribute and align. I made sure all links or buttons will be in the center, and a 10 px space above the navigation bar so it will be separate and easy to see. I came up with these numbers by looking into the basics most websites do, but also through trial and error on my website. */
 nav {
   display: flex;
   justify-content: center;
   margin-top: 10px;
 }
 
-/* Main content area */
+/* Main content is set with a max width, this was it will not be stretched on large screens and will shrink correctly on small screens, I learned this from MDN Web Docs, they helped me a lot with these commands. I wanted to try something a little more complex but still basic, and saw this as an option. I added good spacing on the top and bottom of the main section by 30px this time, and auto set left and right margins which centers it. The background color is white, padding is added inside the elemnt on all sides, a small border in a light grey outline again as well to make sure it stands out a little bit but remains subtle.  */
 main {
   max-width: 900px;
   margin: 30px auto;
@@ -44,7 +45,7 @@ main {
   border: 1px solid #ccc;
 }
 
-/* Table styling with green borders */
+/* Table will fill the entire width needed, all the table cells will only have one border instead of double from stacking, I added a green border this time just to use some color, and I wanted the tables to stand out a little more. I also made sure all of the headers and cells will align their text to the left, have that same border, and has a little padding inside each cell which means the content will not be too close together. */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -58,12 +59,12 @@ th, td {
   text-align: left;
 }
 
-/* Lists */
+/* Lists just have a little padding on the left by 20px, I didn't do anything special to them. */
 ul {
   padding-left: 20px;
 }
 
-/* Footer styling */
+/* I wanted the footer to not stand out, and for it to be small so it isn't the same as regular body font. After some trail and error and a lot of research, I ended up using a white background, center aligned text to keep it neat, some padding to make sure it is far enough away from everything, a light grey border once again but at the top to separate it but remain subtle. */
 footer {
   background-color: white;
   text-align: center;
@@ -72,10 +73,71 @@ footer {
   font-size: 0.9em;
 }
 
-/* Image styling with black border */
+/* Max-width is used to make sure the image is NEVER larger than its intended "container", auto set the height so distortion does not happen when adjusting the image per screen, a small 1 px black border around images to make it slightly stand out, and a space above the image to make sure the content is separated from the image from above. I didn't do it below as due to my other CSS, it didn't seem needed. */
 img {
   max-width: 100%;
   height: auto;
   border: 1px solid black;
   margin-top: 15px;
+}
+
+/*BELOW THIS LINE IS ADDED FOR THE QUIZ ADDITION, MILESTONE 2*/
+
+/* Quiz container with green border and light background. I wanted to actually go out more with color, so I tried out a green theme for this quiz like I use for my tables' outline. */
+form#TheQuiz {
+  max-width: 600px;
+  margin: 0 auto 40px auto; /* Center the quiz and add space below */
+  padding: 20px;
+  border: 2px solid green; /* Green border */
+  background-color: #9dffb2; /* Light green background*/
+  border-radius: 5px; /* Slightly rounded corners */
+  color: black; /* I didn't modify my text color, I don't want to be too adventurous */
+}
+
+/* Fieldsets get green borders and some padding */
+fieldset {
+  border: 1px solid green; /* Green border */
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+/* Legends in my code are bold and black on user screen*/
+legend {
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* Labels block display so each answer is on its own line */
+label {
+  display: block;
+  margin: 8px 0;
+  color: black;
+}
+
+/* Text input box with green border */
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1.5px solid green;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: black;
+}
+
+/* Buttons with green background and white text */
+button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Button hover effect: slightly darker green */
+button:hover {
+  background-color: #006400;
 }

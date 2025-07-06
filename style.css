@@ -140,3 +140,9 @@ input[type="text"] {
   background-color: #3e3d3d; /*dark grey when option selected in quiz*/
   color: white;
 }
+#TheQuiz label:hover {
+  background-color: #484848;
+  cursor: pointer;
+}
+
+

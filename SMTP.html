@@ -1,0 +1,48 @@
+<!--I start with DOCTYPE and html to make sure my file is read as HTML. I use the charset again to make sure it is read the same on every device as well.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8"/>
+    <title>SMTP Protocol</title>
+<!--Linking my css so it is present on this page as well as the others.-->
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<!--Navigation included on this page as well.-->
+<header>
+    <h1>SMTP Protocol</h1>
+   <nav>
+        <a href="index.html">Home</a>
+        <a href="HTTPandHTTPS.html">HTTP and HTTPS</a>
+        <a href="TELNET.html">TELNET Protocol</a>
+        <a href="FTPandSFTP.html">FTP and SFTP</a>
+        <a href="SMTP.html">SMTP Protocol</a>
+        <a href="references.html">References</a>
+        <a href="quiz.html">Self-Assessment Quiz</a>
+    </nav>
+</header>
+<!--I decided to do 3 headers this time, to expand on my information like it is listed in the assignment notes for Milestone #3. I wanted to include as much as possible.-->
+<main>
+    <h2>Introduction to SMTP</h2>
+    <p>SMTP stands for Simple Mail Transfer Protocol. It is used for exchanging messages via email between servers ("Simple Mail Transfer Protocol (SMTP)", 2025, 1).</p>
+
+    <h2>How does SMTP work?</h2>
+    <p>There are two types of email delivery methods when using the SMTP model, such as end-to-end delivery and store-and-forward. "End-to-end delivery is used between organization. In this method, the email is sent directly from the sender's SMTP client to the recipient's SMTP server without passing through intermediate servers" while "[s]tore-and-forward is used within organizations that have TCP/IP and SMTP-based networks. In this method, the email may pass through several intermediate servers (Message Transfer Agents, or MTAs) before reaching the recipient" ("Simple Mail Transfer Protocol (SMTP)", 2025, 3).</p>
+
+    <h2>Is there any disadvantages?</h2>
+    <p>There are a couple of disadvantages of using SMTP. Some of these would be the common port being blocked by firewalls, security is a big problem, how simple it restricts the usefulness, you can only use 7-bit ASCII characters, SMTP servers may reject entire messages based on length of the mail ("Simple Mail Transfer Protocol (SMTP)", 2025, 13).</p>
+<!--Summary list like on every other page.-->
+    <ul>
+        <li>Sends messages via email between servers</li>
+        <li>Uses end-to-end delivery and store-and-forward</li>
+        <li>Security is a big problem</li>
+        <li>May reject entire messages based on length of mail</li>
+    </ul>
+</main>
+<!--Footer on every page just to make sure my bases were covered. It's just a copy and past after I write it the first time so it's no extra work to do so really.-->
+<footer>
+    <p>This is a class project for IT 3203. <a href="https://ksuweb.github.io/IT3203/">Course Site</a></p>
+</footer>
+<!--Now we close off our code.-->
+</body>
+</html>

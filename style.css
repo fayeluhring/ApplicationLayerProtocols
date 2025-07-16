@@ -137,5 +137,73 @@ input[type="text"] {
 }
 .quiz-button:hover,
 .quiz-button:active {
-  background-color: #3e3d3d !important; /*dark grey when option selected in quiz*/
+  background-color: #3e3d3d; /*dark grey when option selected in quiz*/
+}
+
+/*ALL BELOW IS FOR MILESTONE 3*/
+/*Adding a media screen for phones/small screens. I found this information on Geeks for Geeks and MDN Web Docs*/
+@media screen and (max-width: 480px) {
+  body{
+    font-size: 16px;
+  }
+  nav{flex-direction: column;
+      margin-top: 5px;
+  }
+  nav a{
+    margin: 5px 0;
+    padding: 10px;
+  }
+  main{
+    margin: 15px 5px;
+    padding: 10px;
+  }
+  table{
+    font-size: 14px;
+    overflow-x: auto;
+    display: block;
+  }
+  img{
+    margin-top: 10px;
+  }
+  form#TheQuiz{
+    padding: 15px;
+    width: 95%;
+  }
+  input[type="text"]{
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/*Medium devices media screen (Tablets). All information found on Geeks for Geeks and MDN Web Docs.*/
+@media screen and (min-width: 481px) and (max-width: 780px) {
+  nav{
+    flex-wrap: wrap;
+  }
+  nav a{
+    margin: 8px 10px;
+  }
+  main{
+    margin: 20px 15px;
+    padding: 15px;
+  }
+  table{
+    font-size: 15px;
+  }
+  form#TheQuiz{
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 18px;
+  }
+}
+
+/*Large devices now (laptops/desktops). All information found on Geeks for Geeks and MDN Web Docs.*/
+@media screen and (min-width: 769px) and (max-width:1024px) {
+  main{
+    max-width: 800px;
+    padding: 20px;
+  }
+  form#TheQuiz{
+    max-width: 80%;
+  }
 }
